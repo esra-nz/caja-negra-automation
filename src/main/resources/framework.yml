@@ -1,0 +1,26 @@
+selectedBrowser: "chrome-0"
+browsers:
+  chrome-0:
+    name: "Chrome"
+    type: "chrome"
+    fullscreen: true
+    height: 440
+    width: 768
+  chrome-1:
+    name: "Chrome"
+    type: "chrome"
+    fullscreen: false
+    height: 766
+    width: 755
+  ie:
+    name: "Internet Explorer"
+    type: "ie"
+    fullscreen: true
+    height: 440
+    width: 768
+  firefox-6:
+    name: "Firefox"
+    type: "firefox"
+    fullscreen: true
+    height: 440
+    width: 768
