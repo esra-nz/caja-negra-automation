@@ -6,21 +6,39 @@ browsers:
     fullscreen: true
     height: 440
     width: 768
+    driverPath: C:\\Support\\BrowserHub\\chromedriver.exe
   chrome-1:
     name: "Chrome"
     type: "chrome"
     fullscreen: false
     height: 766
     width: 755
+    driverPath: C:\\BrowserHub\\chromedriver.exe
   ie:
     name: "Internet Explorer"
     type: "ie"
     fullscreen: true
     height: 440
     width: 768
+    driverPath: C:\\BrowserHub\\IEDriverServer-64.exe
   firefox-6:
     name: "Firefox"
     type: "firefox"
     fullscreen: true
     height: 440
     width: 768
+    driverPath: C:\\BrowserHub\\geckodriver.exe
+selectedEnvironment: "SIT"
+environments:
+  SIT:
+    oauthUrl: "https://sit-api.eat.business.govt.nz/oauth2/authorize"
+    baseUrl: "http://"
+    callback: "http://localhost/getmycode"
+    clientId: "PsDLRBrYuJikCanPqfLUICvXrvka"
+    clientSecret: ""
+    clientToken: ""
+reports:
+  name: "Social Media Login"
+  outputPath: "c:\\temp\\report\\report.html"
+  screenShotPath: "c:\\temp\\report\\screenshots"
+  captureScreenShot: true

@@ -32,10 +32,14 @@ public class BrowserConfig {
     public void setWidth(int width) {
         this.width = width;
     }
+    public String getDriverPath() {return driverPath;}
+    public void setDriverPath(String driverPath) {this.driverPath = driverPath;}
+
 
     private String name;
     private String type;
     private Boolean fullscreen;
     private int height;
     private int width;
+    private String driverPath;
 }

@@ -7,15 +7,22 @@ import java.io.*;
 
 public class YamlConfiguration {
 
-    public FrameworkConfig getConfig() {
-        return config;
+    public FrameworkConfig getFrameworkConfig() {
+        return frameworkConfig;
+    }
+    public BrowserConfig getBrowserConfig() {
+        return browserConfig;
+    }
+    public EnvironmentConfig getEnvironmentConfig() {
+        return environmentConfig;
     }
 
-    private FrameworkConfig config;
+    private FrameworkConfig frameworkConfig;
+    private BrowserConfig browserConfig;
+    private EnvironmentConfig environmentConfig;
 
     public YamlConfiguration(){}
 
-    //fixme - should be package-private
     public void loadResources(String path) throws IOException {
         Constructor constructor = new Constructor(FrameworkConfig.class);
         Yaml yaml = new Yaml( constructor );
@@ -26,14 +33,18 @@ public class YamlConfiguration {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        config = yaml.loadAs( input, FrameworkConfig.class );
+        frameworkConfig = yaml.loadAs( input, FrameworkConfig.class );
+        browserConfig = frameworkConfig.getSelectedBrowserConfig();
+        environmentConfig = frameworkConfig.getSelectedEnvionmentConfig();
     }
 
 
     public static void main(String arg[]){
         YamlConfiguration configuration = new YamlConfiguration();
         try{
-            configuration.loadResources("C:\\myprojects\\FederatedLogins\\idpswitching-automation\\mbie-automation-idpselection\\src\\main\\resources\\framework.yml");
+            configuration.loadResources("C:\\myprojects\\AutomationFramework\\caja-negra-automation\\src\\main\\resources\\framework.yml");
+            System.out.println(configuration.getBrowserConfig().getName());
+            System.out.println(configuration.getEnvironmentConfig().getBaseUrl());
         }catch (IOException e){
             e.printStackTrace();
         }
