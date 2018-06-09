@@ -45,6 +45,7 @@ public class YamlConfiguration {
             configuration.loadResources("C:\\myprojects\\AutomationFramework\\caja-negra-automation\\src\\main\\resources\\framework.yml");
             System.out.println(configuration.getBrowserConfig().getName());
             System.out.println(configuration.getEnvironmentConfig().getBaseUrl());
+            System.out.println(configuration.getEnvironmentConfig().getProduction().get("clientId"));
         }catch (IOException e){
             e.printStackTrace();
         }

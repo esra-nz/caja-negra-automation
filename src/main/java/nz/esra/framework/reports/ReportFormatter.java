@@ -43,7 +43,7 @@ public class ReportFormatter implements Reporter, Formatter {
             return;
         }
         if (file == null || file.getPath().isEmpty()) {
-            file = new File(loader.getConfig().getFrameworkConfig().getReports().getOutputPath());
+            file = new File(loader.getConfig().getFrameworkConfig().getReports().getOutputPath()+"index.html");
         }
         if (!file.exists()) {
             file.getParentFile().mkdirs();

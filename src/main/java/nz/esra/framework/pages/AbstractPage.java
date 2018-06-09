@@ -25,6 +25,7 @@ public abstract class AbstractPage {
     }
 
 
+    public By getPageObjectById(String key) { return pageObjects.get(key); }
 
     protected void clickElement(String key){
         if(!pageObjects.containsKey(key)){

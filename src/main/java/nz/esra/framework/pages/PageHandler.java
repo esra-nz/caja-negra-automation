@@ -35,13 +35,14 @@ public class PageHandler {
     }
 
     public String captureScreenShot() throws IOException {
-        String filePath = loader.getConfig().getFrameworkConfig().getReports().getScreenShotPath();
-        String fileName = filePath+System.currentTimeMillis()+".png";
+        String  screenShotFolderName = "screenshots";
+        String filePath = loader.getConfig().getFrameworkConfig().getReports().getOutputPath()+screenShotFolderName;
+        String fileName = System.currentTimeMillis()+".png";
         driver.manage().window().maximize();
         File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(scrFile, new File(fileName));
+        FileUtils.copyFile(scrFile, new File(filePath+"//"+fileName));
         driver.close();
-        return fileName;
+        return screenShotFolderName+"/"+fileName;
     }
 
 
@@ -55,6 +56,15 @@ public class PageHandler {
 
     public String getUrl(){
         return driver.getCurrentUrl();
+    }
+
+    public boolean containsElement(By element){
+        try{
+            driver.findElement(element);
+            return true;
+        }catch (NoSuchElementException nsee){
+            return false;
+        }
     }
 
     public void closeWindow(){
