@@ -31,14 +31,16 @@ browsers:
 selectedEnvironment: "SIT"
 environments:
   SIT:
-    oauthUrl: "https://sit-api.eat.business.govt.nz/oauth2/authorize"
-    baseUrl: "http://"
-    callback: "http://localhost/getmycode"
-    clientId: "PsDLRBrYuJikCanPqfLUICvXrvka"
-    clientSecret: ""
-    clientToken: ""
+    oauthUrl: "[oauth-url-goes-here]"
+    baseUrl: "base-url-goes-here]"
+    callback: "callback-url-goes-here]"
+    production:
+      clientId: "[production-client-id]"
+      clientSecret: "production-client-secret"
+    sandbox:
+      clientId: "sandbox-client-id"
+      clientSecret: "sandbox-client-secret"
 reports:
   name: "Social Media Login"
-  outputPath: "c:\\temp\\report\\report.html"
-  screenShotPath: "c:\\temp\\report\\screenshots"
+  outputPath: "c:\\temp\\report\\"
   captureScreenShot: true
